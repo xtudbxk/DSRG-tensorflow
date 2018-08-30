@@ -390,7 +390,6 @@ class DSRG():
 
                 i+=1
                 epoch = i / iterations_per_epoch_train
-                epoch += 300
 
 
             end_time = time.time()
