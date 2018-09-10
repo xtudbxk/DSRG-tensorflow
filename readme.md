@@ -45,8 +45,7 @@ then, you just input the following sentence to train it.
 > python DSRG.py <gpu_id>
 
 ### Result
-
-train the network with totally 24 epoch and lr=1e-3 for the begining, then lr drops into one tenth of its old value each 8 epoches. And in testing, we first resize the featmap into 321x321 and update the crf config for testing( just remove the 12 in the origin crf config), And the final result is 0.564 in the validatation set while it is 0.574(without pretrain step) in the paper.
+The final result is 0.556 in the validatation set while it is 0.574(without pretrain step) in the paper.
 
 ### Evaluation
 I just release a [project](https://github.com/xtudbxk/semantic-segmentation-metrics) to provide the code for evaluation.
