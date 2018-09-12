@@ -48,5 +48,9 @@ then, you just input the following sentence to train it.
 If you scale the input image with factors 0.5, 0.75 and 1.0, then use the max to merge the result. 
 The final result is 0.567 in the validatation set while it is 0.574(without pretrain step) in the paper.
 
+### Trained model
+[google_driver](https://drive.google.com/open?id=1hlSl1EaDKWA00hvd6Ar0xDZ9uOZ7HKYu)
+[BaiduNetdisk](https://pan.baidu.com/s/1vITyeBR5kxaGcOF0BHGkJA)
+
 ### Evaluation
 I just release a [project](https://github.com/xtudbxk/semantic-segmentation-metrics) to provide the code for evaluation.
