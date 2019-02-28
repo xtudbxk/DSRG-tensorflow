@@ -1,6 +1,6 @@
 ### Introduction
 
-This is a project which just move the [DSRG](https://github.com/speedinghzl/DSRG) to tensorflow. The DSRG is referring to the approach for weakly-supervised semantic segmentation in the paper ["Weakly-Supervised Semantic Segmentation Network with Deep Seeded Region Growing"](https://github.com/speedinghzl/DSRG). And here, I just use the tensorflow to implement the approach with the help of the [DSRG](https://github.com/kolesman/SEC) project.
+This is a project which just move the [DSRG](https://github.com/speedinghzl/DSRG) to tensorflow. The DSRG is referring to the approach for weakly-supervised semantic segmentation in the paper ["Weakly-Supervised Semantic Segmentation Network with Deep Seeded Region Growing"](https://github.com/speedinghzl/DSRG). And here, I just use the tensorflow to implement the approach with the help of the [DSRG](https://github.com/speedinghzl/DSRG) project.
 
 ### Citing this repository
 
