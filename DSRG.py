@@ -367,14 +367,10 @@ class DSRG():
                     self.sess.run(self.net["accum_gradient_clean"])
                 if i == 8*iterations_per_epoch_train:
                     new_lr = 1e-4
-                    print("save model before new_lr:%f" % new_lr)
-                    self.saver["lr"].save(self.sess,os.path.join(self.config.get("saver_path","saver"),"lr-%f" % base_lr),global_step=i)
                     self.sess.run(tf.assign(self.net["lr"],new_lr))
                     base_lr = new_lr
                 if i == 16*iterations_per_epoch_train:
                     new_lr = 1e-5
-                    print("save model before new_lr:%f" % new_lr)
-                    self.saver["lr"].save(self.sess,os.path.join(self.config.get("saver_path","saver"),"lr-%f" % base_lr),global_step=i)
                     self.sess.run(tf.assign(self.net["lr"],new_lr))
                     base_lr = new_lr
 
