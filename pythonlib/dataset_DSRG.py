@@ -83,32 +83,32 @@ class dataset_dsrg():
             id_for_slice = x["id_for_slice"]
             def get_data(identy):
                 identy = identy.decode()
-                label = np.zeros([self.category_num])
-                label[self.cues_data["%s_labels" % identy]] = 1.0
-                label[0] = 1.0
+                tag = np.zeros([self.category_num])
+                tag[self.cues_data["%s_labels" % identy]] = 1.0
+                tag[0] = 1.0
                 cues = np.zeros([41,41,21])
                 cues_i = self.cues_data["%s_cues" % identy]
                 cues[cues_i[1],cues_i[2],cues_i[0]] = 1.0
-                return label.astype(np.float32),cues.astype(np.float32)
+                return tag.astype(np.float32),cues.astype(np.float32)
 
-            label,cues = tf.py_func(get_data,[id_for_slice],[tf.float32,tf.float32])
+            tag,cues = tf.py_func(get_data,[id_for_slice],[tf.float32,tf.float32])
             img,gt,cues = self.image_preprocess(img,gt,cues,flip=True)
 
             img = tf.reshape(img,[self.h,self.w,3])
             gt = tf.reshape(gt,[self.h,self.w,1])
-            label.set_shape([21])
+            tag.set_shape([21])
             cues.set_shape([41,41,21])
 
-            return img,gt,label,cues,id_
+            return img,gt,tag,cues,id_
 
         dataset = dataset.repeat(epoches)
         dataset = dataset.shuffle(self.data_len[category])
         dataset = dataset.map(m)
         dataset = dataset.batch(batch_size)
         iterator = dataset.make_initializable_iterator()
-        img,gt,label,cues,id_ = iterator.get_next()
+        img,gt,tag,cues,id_ = iterator.get_next()
             
-        return img,gt,label,cues,id_,iterator
+        return img,gt,tag,cues,id_,iterator
 
     def image_preprocess(self,img,gt,cues,flip=False):
         #img = tf.image.resize_image_with_crop_or_pad(img, self.h, self.w)
