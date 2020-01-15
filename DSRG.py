@@ -235,7 +235,7 @@ class DSRG():
 
     def load_init_model(self):
         model_path = self.config["init_model_path"]
-        self.init_model = np.load(model_path,encoding="latin1").item()
+        self.init_model = np.load(model_path,encoding="latin1",allow_pickle=True).item()
         print("load init model success: %s" % model_path)
 
     def get_weights_and_bias(self,layer,shape=None):
